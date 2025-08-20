@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo 1x1 Online – TicTacToe</title>
+    <link rel="stylesheet" href="velha.css" />
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Jogo da Velha Online (1x1)</h1>
+
+      <div class="card">
+        <div class="row">
+          <button id="createRoom">Criar sala</button>
+          <input id="roomCode" placeholder="Código da sala" />
+          <button id="joinRoom">Entrar</button>
+        </div>
+
+        <div class="row">
+          <span>Você é: <strong id="youAre">—</strong></span>
+          <span>Turno: <strong id="turn">—</strong></span>
+          <span id="status"></span>
+        </div>
+      </div>
+
+      <div id="board" class="board">
+        <!-- 9 células -->
+        <button class="cell" data-i="0"></button>
+        <button class="cell" data-i="1"></button>
+        <button class="cell" data-i="2"></button>
+        <button class="cell" data-i="3"></button>
+        <button class="cell" data-i="4"></button>
+        <button class="cell" data-i="5"></button>
+        <button class="cell" data-i="6"></button>
+        <button class="cell" data-i="7"></button>
+        <button class="cell" data-i="8"></button>
+      </div>
+
+      <div class="row">
+        <button id="reset">Reiniciar partida</button>
+      </div>
+
+      <p class="hint">
+        Dica: uma pessoa clica em <b>Criar sala</b> e manda o código para a
+        outra. A outra cola o código e clica <b>Entrar</b>.
+      </p>
+    </div>
+
+    <script src="jogovelha.js"></script>
+    <script type="module" src="jogo.js"></script>
+  </body>
+</html>
